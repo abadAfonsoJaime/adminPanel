@@ -1,13 +1,198 @@
+@font-face {
+  font-family: "Raleway", sans-serif;
+  src: url("./assets/fonts/Raleway-Regular.ttf");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-size: 1em;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
+  /* font-family: "Raleway", sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* Conseguido en el body de index.html
+main {
+  background-color: #4f87ce;
+}*/
+
+@media (max-width: 575.98px) {
+  /* Extra small devices (portrait phones, less than 576px)*/
+  body {
+    font-size: 140%;
+  }
+}
+@media (max-width: 767.98px) {
+  /* Small devices (landscape phones, less than 768px) */
+  body {
+    font-size: 120%;
+  }
+}
+@media (max-width: 991.98px) {
+  /* Medium devices (tablets, less than 992px) */
+  body {
+    font-size: 110%;
+  }
+}
+
+/* .navbar {
+  margin-bottom: 20px;
+} */
+
+.image {
+  border-radius: 6px;
+  border: 0;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.image > div {
+  border-radius: 6px;
+  display: block;
+}
+
+.image.phone {
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0 0 3em 0;
+  width: 20em;
+}
+
+.image.phone img {
+  border-radius: 0;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.image.phone .inner,
+.image.phone:before,
+.image.phone:after {
+  display: block;
+  border: solid 2px rgba(255, 255, 255, 0.25);
+}
+
+.image.phone .inner {
+  position: relative;
+}
+
+.image.phone .inner:before,
+.image.phone .inner:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+}
+
+.image.phone .inner:before {
+  top: -1.375em;
+  margin-left: -1em;
+  width: 2em;
+  height: 0.25em;
+  border-radius: 0.5em;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.image.phone .inner:after {
+  bottom: -2.75em;
+  margin-left: -1em;
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  border: solid 2px rgba(255, 255, 255, 0.25);
+}
+
+.image.phone:before,
+.image.phone:after {
+  content: "";
+}
+
+.image.phone:before {
+  height: 2.5em;
+  border-radius: 1em 1em 0 0;
+  border-bottom: 0;
+}
+
+.image.phone:after {
+  height: 3.5em;
+  border-radius: 0 0 1em 1em;
+  border-top: 0;
+}
+
+.image {
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #e6e6e6;
+}
+
+.image.phone {
+  box-shadow: none;
+}
+
+.image.phone .inner,
+.image.phone:before,
+.image.phone:after {
+  border-color: #e6e6e6;
+}
+
+.image.phone .inner:before {
+  background: #e6e6e6;
+}
+
+.image.phone .inner:after {
+  border-color: #e6e6e6;
+}
+
+.altura {
+  padding-bottom: 15em;
+}
+
+.card {
+  padding: 9px 0;
+  margin: 10px 4px 60px 4px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.title {
+  padding-left: 6px;
+  font-size: 20px;
+}
+
+.subtitle {
+  padding: 0px 8px;
+  font-size: 16px;
+}
+
+.buttonContainer {
+  margin-left: 6px;
+}
+
+.customButton {
+  border-style: solid;
+  border-color: #61c8ec;
+  border-width: 3px;
+  border-radius: 24px;
+  height: 48px;
+  padding: 0px 20px;
+}
+
+.buttonText {
+  margin: 8px 0px;
+  font-size: 16px;
+  color: #4f87ce;
 }

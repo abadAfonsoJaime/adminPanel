@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import Cards from "./components/cards";
+import NavBar from "./components/navBar";
+import CardForm from "./components/cardForm";
+import NotFound from "./components/notFound";
+import Simulator from "./components/simulator";
+import PhoneSimulator from "./components/phoneSimulator";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <>
+        {/* <ToastContainer /> */}
+        <NavBar />
+        <main className="container-fluid">
+          <Switch>
+            <Route path="/not-found" component={NotFound}></Route>
+            <Route path="/phoneSimulator" component={PhoneSimulator}></Route>
+            <Route path="/simulator/:id?" component={Simulator}></Route>
+            <Route path="/cards/:id" component={CardForm}></Route>
+            <Route path="/cards" render={props => <Cards {...props} />} />
+            <Redirect exact from="/" to="/cards" />
+            <Redirect to="/not-found" />
+          </Switch>
+        </main>
+      </>
+    );
+  }
 }
 
 export default App;
