@@ -1,50 +1,37 @@
-@font-face {
-  font-family: "Raleway", sans-serif;
-  src: url("./assets/fonts/Raleway-Regular.ttf");
-}
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
 body {
   margin: 0;
   font-size: 1em;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif; */
-  /* font-family: "Raleway", sans-serif; */
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
-/* Conseguido en el body de index.html
-main {
-  background-color: #4f87ce;
-}*/
-
-@media (max-width: 575.98px) {
-  /* Extra small devices (portrait phones, less than 576px)*/
-  body {
-    font-size: 140%;
-  }
-}
-@media (max-width: 767.98px) {
-  /* Small devices (landscape phones, less than 768px) */
-  body {
-    font-size: 120%;
-  }
-}
-@media (max-width: 991.98px) {
-  /* Medium devices (tablets, less than 992px) */
-  body {
-    font-size: 110%;
-  }
-}
-
-/* .navbar {
-  margin-bottom: 20px;
+/* .btn {
+  font-weight: bold;
 } */
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+  body {
+    font-size: 150%;
+  }
+}
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  body {
+    font-size: 125%;
+  }
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  body {
+    font-size: 115%;
+  }
+}
 
 .image {
   border-radius: 6px;

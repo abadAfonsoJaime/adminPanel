@@ -103,27 +103,29 @@ class Cards extends Component {
 
     return (
       <>
-        <div className="row" style={{ marginBottom: 20 }}>
-          <div className="col-sm-9">
-            <div className="row justify-content-around align-items-center">
-              <div className="col-4">
-                <Link
-                  to="/cards/new"
-                  className="btn"
-                  //style={{ backgroundColor: "#4f87ce" }}
-                  style={{ backgroundColor: "#61c8ec" }}
-                >
-                  Nueva Campaña
-                </Link>
-              </div>{" "}
-              <div className="col-6">
-                <SearchBox value={searchQuery} onChange={this.handleSearch} />
-              </div>
-            </div>
-
-            <p style={{ fontWeight: "bold" }}>
-              Actualmente hay {totalCount} campañas en la base de datos.
-            </p>
+        <div className="row justify-content-around align-items-center">
+          <div className="col-sm-4 d-flex justify-content-center">
+            <Link
+              to="/cards/new"
+              className="btn"
+              //style={{ backgroundColor: "#4f87ce" }}
+              style={{ backgroundColor: "#61c8ec", fontWeight: "bold" }}
+            >
+              Nueva Campaña
+            </Link>
+          </div>
+          <div className="col-sm-6">
+            <SearchBox value={searchQuery} onChange={this.handleSearch} />
+          </div>
+        </div>
+        <br />
+        <div className="row">
+          <div className="col d-flex justify-content-center">
+            <h5>Actualmente hay {totalCount} campañas en la base de datos.</h5>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col">
             <CardsTable
               cards={cards}
               sortColumn={sortColumn}
@@ -139,24 +141,18 @@ class Cards extends Component {
               onPageChange={this.handlePageChange}
             />
           </div>
-          <div className="col-sm-1 col-sm-offset-1">
-            <div className="my-5">
-              <PhoneSimulator>
-                {simulator.display && (
-                  <CardSimulator
-                    title={simulator.title}
-                    description={simulator.description}
-                    buttonText={simulator.buttonText}
-                  />
-                )}
-              </PhoneSimulator>
-            </div>
-            {/* <Simulator
-              title={simulator.title}
-              description={simulator.description}
-              buttonText={simulator.buttonText}
-              display={simulator.display}
-            /> */}
+        </div>
+        <div className="row  justify-content-center">
+          <div className="col-auto">
+            <PhoneSimulator>
+              {simulator.display && (
+                <CardSimulator
+                  title={simulator.title}
+                  description={simulator.description}
+                  buttonText={simulator.buttonText}
+                />
+              )}
+            </PhoneSimulator>
           </div>
         </div>
       </>

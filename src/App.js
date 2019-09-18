@@ -7,14 +7,22 @@ import CardForm from "./components/cardForm";
 import NotFound from "./components/notFound";
 import Simulator from "./components/simulator";
 import PhoneSimulator from "./components/phoneSimulator";
+import logo from "./logo_130aniversario.svg";
 
 class App extends Component {
   render() {
     return (
       <>
         {/* <ToastContainer /> */}
+        <div className="row justify-content-center">
+          <span>
+            <img src={logo} width="383" height="75" alt="Purisima" />
+          </span>
+        </div>
+
         <NavBar />
-        <main className="container-fluid">
+        <br />
+        <div className="container-fluid">
           <Switch>
             <Route path="/not-found" component={NotFound}></Route>
             <Route path="/phoneSimulator" component={PhoneSimulator}></Route>
@@ -24,7 +32,7 @@ class App extends Component {
             <Redirect exact from="/" to="/cards" />
             <Redirect to="/not-found" />
           </Switch>
-        </main>
+        </div>
       </>
     );
   }

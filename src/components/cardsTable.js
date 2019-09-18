@@ -31,10 +31,12 @@ const CardsTable = ({
     {
       label: "Visible",
       content: eachCard => (
-        <Eye
-          isVisible={eachCard.isVisible}
-          onToggleVisibility={() => onVisibility(eachCard)}
-        />
+        <div className="d-flex justify-content-center">
+          <Eye
+            isVisible={eachCard.isVisible}
+            onToggleVisibility={() => onVisibility(eachCard)}
+          />
+        </div>
       )
     },
     {

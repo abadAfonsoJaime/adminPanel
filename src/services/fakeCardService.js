@@ -1,7 +1,7 @@
 const cards = [
   {
     _id: "5b21ca3eeb7f6fbccd471815",
-    title: "Gana un viaje",
+    title: "10 Gana un viaje",
     description:
       "Participa en nuestro concurso de verano y podrás ganar un viaje a Canarias de 1 semana de duración con todos los gastos pagados",
     buttonText: "click aquí",
@@ -11,7 +11,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471816",
-    title: "Consigue un premio",
+    title: "7 Consigue un premio",
     description:
       "Participa en nuestro concurso de verano  Canarias de 1 semana de duración con todos los gastos pagados",
     buttonText: "dame el premio",
@@ -21,7 +21,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471817",
-    title: "Participa en el sorteo",
+    title: "1 Participa en el sorteo",
     description:
       "Participa en nuestro concurso de verano y podrás ganar un viaje a Canarias de todos los gastos pagados",
     buttonText: "Quiero participar",
@@ -31,7 +31,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471818",
-    title: "Participa en el sorteo",
+    title: "3 Participa en el sorteo",
     description:
       "Participa en nuestro concurso de verano y podrás ganar un viaje a Canarias de 1 semana de duración con ",
     buttonText: "participar",
@@ -41,7 +41,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471819",
-    title: "Gana un premio",
+    title: "8 Gana un premio",
     description:
       "Participa en nuestro concurso de verano y podrás ganar un viaje a Canarias con todos los gastos pagados",
     buttonText: "dame el premio",
@@ -51,7 +51,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471836",
-    title: "Gana un premio",
+    title: "5 Gana un premio",
     description:
       "Participa en nuestro concurso de verano y podrás ganar un viaje a Canarias de 1 semana de duración con todos los gastos pagados",
     buttonText: "dame el premio",
@@ -61,7 +61,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471837",
-    title: "Gana un viaje a Paris",
+    title: "9 Gana un viaje a Paris",
     description:
       "Participa en nuestro concurso de verano  Canarias de 1 semana de duración con todos los gastos pagados",
     buttonText: "click",
@@ -71,7 +71,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471838",
-    title: "Consigue un cupón de Amazon",
+    title: "2 Consigue un cupón de Amazon",
     description:
       "Participa en nuestro concursoy podrás ganar 100€ para gastar en productos de Amazon",
     buttonText: "click",
@@ -81,7 +81,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471839",
-    title: "Gana un viaje a Japón",
+    title: "4 Gana un viaje a Japón",
     description:
       "Participa en nuestro concurso y podrás ganar un viaje a Japón de 1 semana de duración con ",
     buttonText: "click",
@@ -91,7 +91,7 @@ const cards = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd471820",
-    title: "Gana un viaje a México",
+    title: "6 Gana un viaje a México",
     description:
       "Participa en nuestro sorteo de un viaje a México con todos los gastos pagados",
     buttonText: "click",
