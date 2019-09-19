@@ -31,12 +31,12 @@ const CardsTable = ({
     {
       label: "Visible",
       content: eachCard => (
-        <div className="d-flex justify-content-center">
-          <Eye
-            isVisible={eachCard.isVisible}
-            onToggleVisibility={() => onVisibility(eachCard)}
-          />
-        </div>
+        // <div className="d-flex justify-content-center">
+        <Eye
+          isVisible={eachCard.isVisible}
+          onToggleVisibility={() => onVisibility(eachCard)}
+        />
+        // </div>
       )
     },
     {
@@ -45,7 +45,7 @@ const CardsTable = ({
         <Link
           to={`/cards/${eachCard._id}`}
           className="btn btn-warning btn-md"
-          //style={{ backgroundColor: "#61c8ec" }}
+          style={{ fontWeight: "bold" }}
         >
           Editar
         </Link>
@@ -68,6 +68,7 @@ const CardsTable = ({
         <button
           onClick={() => onPreview(eachCard)}
           className="btn btn-outline-success btn-block"
+          style={{ fontWeight: "bold" }}
         >
           Vista previa
         </button>

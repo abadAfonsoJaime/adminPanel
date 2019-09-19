@@ -1,6 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
-import Simulator from "./simulator";
+import PhoneSimulator from "./phoneSimulator";
+import CardSimulator from "./cardSimulator";
 import { getCardById, saveCard } from "../services/fakeCardService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
@@ -89,24 +90,41 @@ class CardForm extends Form {
   enableButton = () => {};
 
   handleSimulator = card => {
-    const simulator = {
-      display: true,
-      title: card.title,
-      description: card.description,
-      buttonText: card.buttonText
-    };
+    const { title, description, buttonText } = card;
+    const simulator = { ...this.state.simulator };
+    simulator.title = title;
+    simulator.description = description;
+    simulator.buttonText = buttonText;
+    simulator.display = true;
     this.setState({ simulator });
     console.log(" display it --> ", simulator);
   };
+  // handleSimulator = card => {
+  //   const simulator = {
+  //     display: true,
+  //     title: card.title,
+  //     description: card.description,
+  //     buttonText: card.buttonText
+  //   };
+  //   this.setState({ simulator });
+  //   console.log(" display it --> ", simulator);
+  // };
 
   render() {
+    console.log("from the form: ", getCardById(this.props.match.params.id));
     //const { match, history } = this.props;
     const { formData, errorMessages, simulator } = this.state;
     console.log("Checkbox value: ", formData.isVisible);
     return (
       <div className="row">
-        <div style={{ marginTop: 20 }} className="col-7">
-          <h1>Formulario de Campaña {formData.title || ""} </h1>
+        <div style={{ marginTop: 20 }} className="col-lg-7">
+          <h1 className="text-center">
+            {" "}
+            {this.props.match.params.id === "new"
+              ? "Formulario de Campaña"
+              : formData.title}{" "}
+          </h1>
+
           <form onSubmit={this.handleSubmit}>
             <InputField
               name="title"
@@ -119,7 +137,33 @@ class CardForm extends Form {
               // in order to apply the autoFocus attribute
             />
             {this.renderTextAreaField("description", "Descripción")}
-            {this.renderInputField("landingPage", "Landing Page (url)", "url")}
+
+            <div className="col form-group">
+              <label htmlFor="landingPage">Landing Page (url)</label>
+              <div className="input-group">
+                <div className="input-group-prepend">
+                  <span className="input-group-text" id="basic-addon3">
+                    https://
+                  </span>
+                </div>
+                <input
+                  name="landingPage"
+                  value={formData.landingPage}
+                  type="text"
+                  error={errorMessages.landingPage}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  id="landingPage"
+                  aria-describedby="basic-addon3"
+                />
+              </div>
+              {errorMessages.landingPage && (
+                <div className="alert alert-danger mb-3">
+                  {errorMessages.landingPage}
+                </div>
+              )}
+            </div>
+            {/* {this.renderInputField("landingPage", "Landing Page (url)", "url")} */}
             {this.renderInputField("buttonText", "Texto del botón")}
             {/* {this.renderRadioBoolean} */}
 
@@ -166,7 +210,11 @@ class CardForm extends Form {
                 <button
                   //disabled={this.validate()}
                   className="btn-lg"
-                  style={{ marginBottom: 20, backgroundColor: "#61c8ec" }}
+                  style={{
+                    marginBottom: 20,
+                    backgroundColor: "#61c8ec",
+                    fontWeight: "bold"
+                  }}
                 >
                   Guardar
                 </button>
@@ -179,20 +227,37 @@ class CardForm extends Form {
             <button
               //disabled={this.validate()}
               className="btn"
-              style={{ marginBottom: 20, backgroundColor: "#61c8ec" }}
+              style={{
+                marginBottom: 20,
+                backgroundColor: "#61c8ec",
+                fontWeight: "bold"
+              }}
               onClick={() => this.handleSimulator(formData)}
             >
               Actualizar simulador
             </button>
           </div>
-          <div className="col-offset-2">
+          <div className="row  justify-content-center">
+            <div className="col-auto">
+              <PhoneSimulator>
+                {simulator.display && (
+                  <CardSimulator
+                    title={simulator.title}
+                    description={simulator.description}
+                    buttonText={simulator.buttonText}
+                  />
+                )}
+              </PhoneSimulator>
+            </div>
+          </div>
+          {/* <div className="col-offset-2">
             <Simulator
               title={simulator.title}
               description={simulator.description}
               buttonText={simulator.buttonText}
               display={simulator.display}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     );

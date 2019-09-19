@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+//import { ToastContainer } from "react-toastify";
 import Cards from "./components/cards";
 import NavBar from "./components/navBar";
 import CardForm from "./components/cardForm";
@@ -16,13 +16,19 @@ class App extends Component {
         {/* <ToastContainer /> */}
         <div className="row justify-content-center">
           <span>
-            <img src={logo} width="383" height="75" alt="Purisima" />
+            <img
+              className="img-fluid"
+              src={logo}
+              width="383"
+              height="75"
+              alt="Purisima"
+            />
           </span>
         </div>
 
         <NavBar />
-        <br />
-        <div className="container-fluid">
+
+        <div className="container-fluid mt-4">
           <Switch>
             <Route path="/not-found" component={NotFound}></Route>
             <Route path="/phoneSimulator" component={PhoneSimulator}></Route>

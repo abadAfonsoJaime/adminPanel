@@ -91,7 +91,7 @@ class Cards extends Component {
 
   render() {
     const { totalCount, cards } = this.updateDataSubset();
-    if (totalCount === 0) return <p> No hay campañas en la base de datos. </p>;
+    //if (totalCount === 0) return <p> No hay campañas en la base de datos. </p>;
 
     const {
       pageSize,
@@ -103,7 +103,7 @@ class Cards extends Component {
 
     return (
       <>
-        <div className="row justify-content-around align-items-center">
+        <div className="row justify-content-around align-items-center mb-4">
           <div className="col-sm-4 d-flex justify-content-center">
             <Link
               to="/cards/new"
@@ -118,10 +118,10 @@ class Cards extends Component {
             <SearchBox value={searchQuery} onChange={this.handleSearch} />
           </div>
         </div>
-        <br />
+
         <div className="row">
           <div className="col d-flex justify-content-center">
-            <h5>Actualmente hay {totalCount} campañas en la base de datos.</h5>
+            <h5>Se encontraron {totalCount} campañas en la base de datos.</h5>
           </div>
         </div>
         <div className="row justify-content-center">
